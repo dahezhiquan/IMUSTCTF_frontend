@@ -27,13 +27,13 @@
     <!-- 轮播图 -->
     <div class="banner-slider-area">
         <div class="banner-slider owl-carousel owl-theme">
-            <div class="banner-item item-bg1">
+            <div class="banner-item item-bg1" style="height: 720px;">
                 <div class="d-table">
                     <div class="d-table-cell">
                         <div class="container">
                             <div class="banner-item-content"><span>IMUSTCTF头条</span>
-                                <h1>头条1标题</h1>
-                                <p>头条1内容</p>
+                                <h1>{{ hotnews1.title }}</h1>
+                                <p>{{ hotnews1.desc }}</p>
                                 <div class="banner-btn">
                                     <a href="#" target="_blank" class="default-btn btn-bg-two border-radius-50">详情 <i
                                             class='bx bx-chevron-right'></i></a>
@@ -46,13 +46,13 @@
                     </div>
                 </div>
             </div>
-            <div class="banner-item item-bg2">
+            <div class="banner-item item-bg2" style="height: 720px;">
                 <div class="d-table">
                     <div class="d-table-cell">
                         <div class="container">
                             <div class="banner-item-content"><span>IMUSTCTF头条</span>
-                                <h1>头条2标题</h1>
-                                <p>头条2内容</p>
+                                <h1>{{ hotnews2.title }}</h1>
+                                <p>{{ hotnews2.desc }}</p>
                                 <div class="banner-btn"><a href="#" target="_blank"
                                                            class="default-btn btn-bg-two border-radius-50">详情 <i
                                         class='bx bx-chevron-right'></i></a></div>
@@ -61,13 +61,13 @@
                     </div>
                 </div>
             </div>
-            <div class="banner-item item-bg3">
+            <div class="banner-item item-bg3" style="height: 720px;">
                 <div class="d-table">
                     <div class="d-table-cell">
                         <div class="container">
                             <div class="banner-item-content"><span>IMUSTCTF头条</span>
-                                <h1>头条3标题</h1>
-                                <p>头条3内容</p>
+                                <h1>{{ hotnews3.title }}</h1>
+                                <p>{{ hotnews3.desc }}</p>
                                 <div class="banner-btn"><a href="#" target="_blank"
                                                            class="default-btn btn-bg-two border-radius-50">详情 <i
                                         class='bx bx-chevron-right'></i></a></div>
@@ -244,7 +244,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-8 col-md-8">
                     <div class="build-content">
-                        <div class="section-title"><span>IMUSTCTF开发团队是一个有活力的团队{{ video }}</span>
+                        <div class="section-title"><span>IMUSTCTF开发团队是一个有活力的团队</span>
                             <h2>加入我们！一起用代码改变世界</h2>
                         </div>
                     </div>
@@ -260,7 +260,7 @@
                     <h2>这一战，要打的漂亮！</h2>
                 </div>
                 <div class="play-area"><a
-                        href='#'
+                        href='https://imustctf.top/video/index/joinus.mp4'
                         class="play-on popup-btn"><i
                         class='bx bx-play'></i></a></div>
             </div>
@@ -439,13 +439,19 @@
     const app = {
         data() {
             return {
-                video: '视频url'
+                hotnews1: {},
+                hotnews2: {},
+                hotnews3: {},
             }
         },
         mounted() {
             axios
-                .get('/index/video')
-                .then(response => (this.video = response))
+                .get('/api/index/hotnews')
+                .then(response => {
+                    this.hotnews1 = JSON.parse(response.data.data[0]);
+                    this.hotnews2 = JSON.parse(response.data.data[1]);
+                    this.hotnews3 = JSON.parse(response.data.data[2]);
+                })
                 .catch(function (error) { // 请求失败处理
                     console.log(error);
                 });
