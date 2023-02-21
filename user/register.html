@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
     <link rel="shortcut icon" href="../assets/images/logos/logo.png" type="image/x-icon">
-    <title>登录 - IMUSTCTF</title>
+    <title>注册 - IMUSTCTF</title>
 </head>
 <body>
 
@@ -28,58 +28,57 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="user-img"><img src="images/login_left.png" alt="登录左侧图片">
+                    <div class="user-img"><img src="images/register_left.png" alt="注册左侧图片">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="user-form">
                         <div class="contact-form">
-                            <h2>久别重逢</h2>
-                            <form action="">
+                            <h2>欢迎加入IMUSTCTF</h2>
+                            <form>
                                 <div class="row">
-                                    <div class="col-lg-12">
+                                    <div class="col-lg-12 ">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="username_email" required
-                                                   data-error="请输入你的用户名或邮箱"
-                                                   placeholder="用户名或邮箱" id="username_email">
-                                            <div style="color: red;" id="username_email_tip"></div>
+                                            <input name="username" type="text" class="form-control" required
+                                                   data-error="请输入用户名"
+                                                   placeholder="用户名" id="username">
+                                            <div style="color: red;" id="username_tip"></div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12">
+                                    <div class="col-lg-12 ">
+                                        <div class="form-group">
+                                            <input name="email" type="email" class="form-control" required
+                                                   data-error="请输入邮箱"
+                                                   placeholder="邮箱" id="email">
+                                            <div style="color: red;" id="email_tip"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
                                         <div class="form-group">
                                             <input class="form-control" type="password" name="password" required
-                                                   data-error="请输入你的密码"
+                                                   data-error="请输入密码"
                                                    placeholder="密码" id="password">
                                             <div style="color: red;" id="password_tip"></div>
                                         </div>
                                     </div>
-
-                                    <div class="col-lg-12">
+                                    <div class="col-12">
                                         <div class="form-group">
                                             <input class="form-control" type="text" name="vercode" required
-                                                   data-error="请输入密钥"
+                                                   data-error="请输入邮箱密钥"
                                                    placeholder="邮箱密钥" id="vercode">
-                                        </div>
-                                        <div style="color: red;" id="key_tip"></div>
-                                    </div>
-
-                                    <div class="col-lg-12 form-condition">
-                                        <div class="agree-label">
-                                            <input type="checkbox" id="chb1">
-                                            <label for="chb1">记住我 <a class="forget"
-                                                                        href="#">忘记密码？</a></label>
+                                            <div style="color: red;" id="key_tip"></div>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 ">
-                                        <button type="button" class="default-btn btn-bg-two" id="login">登 录</button>
+                                        <button type="button" class="default-btn btn-bg-two" id="register">注 册
+                                        </button>
                                         &nbsp;
                                         <button type="button" class="default-btn btn-bg-two" id="email_key" value="">
                                             获取邮箱密钥
                                         </button>
                                     </div>
                                     <div class="col-12">
-                                        <p class="account-desc">没有注册过IMUSTCTF？ <a href="register.html">注册</a>
-                                        </p>
+                                        <p class="account-desc">已经有IMUSTCTF账户？ <a href="login.html">登录</a></p>
                                     </div>
                                 </div>
                             </form>
@@ -91,7 +90,8 @@
     </div>
 </div>
 
-<br/></br></br><br/>
+
+<br/></br></br>
 
 <!-- footer -->
 <div id="footer"></div>
