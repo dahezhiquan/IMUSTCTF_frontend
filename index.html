@@ -35,7 +35,7 @@
                                 <h1>{{ hotnews1.title }}</h1>
                                 <p>{{ hotnews1.desc }}</p>
                                 <div class="banner-btn">
-                                    <a href="#" target="_blank" class="default-btn btn-bg-two border-radius-50">详情 <i
+                                    <a v-bind:href="hotnews1.url" target="_blank" class="default-btn btn-bg-two border-radius-50">详情 <i
                                             class='bx bx-chevron-right'></i></a>
                                     <!-- 轮播图上面的黄色按钮，暂未使用
                                     <a href="#" class="default-btn btn-bg-one border-radius-50 ml-20">测试 <i class='bx bx-chevron-right'></i></a>
@@ -53,7 +53,7 @@
                             <div class="banner-item-content"><span>IMUSTCTF头条</span>
                                 <h1>{{ hotnews2.title }}</h1>
                                 <p>{{ hotnews2.desc }}</p>
-                                <div class="banner-btn"><a href="#" target="_blank"
+                                <div class="banner-btn"><a v-bind:href="hotnews2.url" target="_blank"
                                                            class="default-btn btn-bg-two border-radius-50">详情 <i
                                         class='bx bx-chevron-right'></i></a></div>
                             </div>
@@ -68,7 +68,7 @@
                             <div class="banner-item-content"><span>IMUSTCTF头条</span>
                                 <h1>{{ hotnews3.title }}</h1>
                                 <p>{{ hotnews3.desc }}</p>
-                                <div class="banner-btn"><a href="#" target="_blank"
+                                <div class="banner-btn"><a v-bind:href="hotnews3.url" target="_blank"
                                                            class="default-btn btn-bg-two border-radius-50">详情 <i
                                         class='bx bx-chevron-right'></i></a></div>
                             </div>
@@ -431,7 +431,7 @@
 
 <script src="assets/js/jquery-3.5.1.min.js"></script>
 <script>
-    // 导入头部导航栏
+    // 导入头部导航栏和底部footer
     $(function () {
         $("#nav-placeholder").load("nav.html");
         $("#footer").load("footer.html");
