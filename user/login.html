@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/animate.min.css">
+    <link rel="stylesheet" href="../assets/fonts/flaticon.css">
+    <link rel="stylesheet" href="../assets/css/boxicons.min.css">
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="../assets/css/nice-select.min.css">
+    <link rel="stylesheet" href="../assets/css/meanmenu.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="shortcut icon" href="../assets/images/logos/logo.png" type="image/x-icon">
+    <title>登录 - IMUSTCTF</title>
+</head>
+<body>
+
+<div id="app">
+    <!-- 导航栏 -->
+    <div id="nav-placeholder"></div>
+    <!-- 导航栏结束 -->
+
+    <div class="user-area pt-100 pb-70">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="user-img"><img src="images/login_left.png" alt="登录左侧图片">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="user-form">
+                        <div class="contact-form">
+                            <h2>久别重逢</h2>
+                            <form action="">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="username_email" required
+                                                   data-error="请输入你的用户名或邮箱"
+                                                   placeholder="用户名或邮箱" id="username_email">
+                                            <div style="color: red;" id="username_email_tip"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <input class="form-control" type="password" name="password" required
+                                                   data-error="请输入你的密码"
+                                                   placeholder="密码" id="password">
+                                            <div style="color: red;" id="password_tip"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" name="vercode" required
+                                                   data-error="请输入密钥"
+                                                   placeholder="邮箱密钥" id="vercode">
+                                        </div>
+                                        <div style="color: red;" id="key_tip"></div>
+                                    </div>
+
+                                    <div class="col-lg-12 form-condition">
+                                        <div class="agree-label">
+                                            <input type="checkbox" id="chb1">
+                                            <label for="chb1">记住我 <a class="forget"
+                                                                        href="#">忘记密码？</a></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 ">
+                                        <button type="button" class="default-btn btn-bg-two" id="login">登 录</button>
+                                        &nbsp;
+                                        <button type="button" class="default-btn btn-bg-two" id="email_key" value="">
+                                            获取邮箱密钥
+                                        </button>
+                                    </div>
+                                    <div class="col-12">
+                                        <p class="account-desc">没有注册过IMUSTCTF？ <a href="#">注册</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br/></br></br><br/>
+
+<!-- footer -->
+<div id="footer"></div>
+<!-- footer -->
+
+
+<script src="../assets/js/jquery-3.5.1.min.js"></script>
+<script>
+    // 导入头部导航栏和底部footer
+    $(function () {
+        $("#nav-placeholder").load("../nav.html");
+        $("#footer").load("../footer.html");
+    });
+</script>
+<!-- Vue组件 -->
+<script src="https://unpkg.com/vue@next"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    const app = {
+        data() {
+            return {}
+        },
+        mounted() {
+
+        }
+    }
+    Vue.createApp(app).mount('#app')
+</script>
+
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/owl.carousel.min.js"></script>
+<script src="../assets/js/jquery.magnific-popup.min.js"></script>
+<script src="../assets/js/jquery.nice-select.min.js"></script>
+<script src="../assets/js/wow.min.js"></script>
+<script src="../assets/js/meanmenu.js"></script>
+<script src="../assets/js/jquery.ajaxchimp.min.js"></script>
+<script src="../assets/js/form-validator.min.js"></script>
+<script src="../assets/js/contact-form-script.js"></script>
+<script src="../assets/js/custom.js"></script>
+</body>
+</html>
