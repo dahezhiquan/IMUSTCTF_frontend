@@ -39,41 +39,45 @@
                                 <div class="row">
                                     <div class="col-lg-12 ">
                                         <div class="form-group">
-                                            <input name="username" type="text" class="form-control" required
+                                            <input v-model="username" name="username" type="text" class="form-control"
+                                                   required
                                                    data-error="请输入用户名"
-                                                   placeholder="用户名" id="username">
+                                                   placeholder="用户名">
                                             <div style="color: red;" id="username_tip"></div>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 ">
                                         <div class="form-group">
-                                            <input name="email" type="email" class="form-control" required
+                                            <input v-model="email" name="email" type="email" class="form-control"
+                                                   required
                                                    data-error="请输入邮箱"
-                                                   placeholder="邮箱" id="email">
+                                                   placeholder="邮箱">
                                             <div style="color: red;" id="email_tip"></div>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
                                             <input class="form-control" type="password" name="password" required
-                                                   data-error="请输入密码"
-                                                   placeholder="密码" id="password">
+                                                   v-model="password" data-error="请输入密码"
+                                                   placeholder="密码">
                                             <div style="color: red;" id="password_tip"></div>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <input class="form-control" type="text" name="vercode" required
+                                            <input v-model="vercode" class="form-control" type="text" name="vercode"
+                                                   required
                                                    data-error="请输入邮箱密钥"
-                                                   placeholder="邮箱密钥" id="vercode">
+                                                   placeholder="邮箱密钥">
                                             <div style="color: red;" id="key_tip"></div>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 ">
-                                        <button type="button" class="default-btn btn-bg-two" id="register">注 册
+                                        <button @click="register" type="button" class="default-btn btn-bg-two">注 册
                                         </button>
                                         &nbsp;
-                                        <button type="button" class="default-btn btn-bg-two" id="email_key" value="">
+                                        <button @click="getvercode" type="button" class="default-btn btn-bg-two"
+                                                value="">
                                             获取邮箱密钥
                                         </button>
                                     </div>
@@ -112,10 +116,23 @@
 <script>
     const app = {
         data() {
-            return {}
+            return {
+                username: '',
+                password: '',
+                email: '',
+                vercode: ''
+            }
         },
-        mounted() {
-
+        methods: {
+            register(event) {
+                alert(this.username);
+                alert(this.password);
+                alert(this.email);
+                alert(this.vercode);
+            },
+            getvercode(event) {
+                alert(this.email);
+            },
         }
     }
     Vue.createApp(app).mount('#app')
